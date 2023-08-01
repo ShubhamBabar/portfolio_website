@@ -1,33 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wellcome to My Website !!</title>
+    <title >Wellcome to my portfolio website !!</title>
+    <link rel="shortcut icon" href="icon.png" type="images">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="box">
-    <p>Hello Every One ... Wellcome to my portfolio Website.</p>
-    <h1>Shubham On this site..</h1>
+    <div id="header">
+        <div class="container1">
+            <nav>
+                <h2>Shubham<span>.com</span></h2>
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <!-- <li><a href="#">Skills</a></li> -->
+                    <li><a href="#projects">projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Java Developer</p>
+                <h1>Hi, I'm <span>Shubham</span><br> From India.</h1>
+            </div>
+        </div>
     </div>
+    <!-- -----------About--------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="about img.jpg" alt="image1">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Hello Wellcome to my portfolio website .I am Shubham. I am Java programmer pursuing B. Tech
+                        degree in Dnyanshree Institute of engineering and
+                        Technology with interest of web development.
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('technologies')">Technologies</p>
+                        <p class="tab-links" onclick="opentab('educations')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App Interfaces </li>
+                            <li><span>Web Development</span><br>Web App Development </li>
+                            <li><span>App Development</span><br>Building Android/ios apps</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents " id="technologies">
+                        <ul>
+                            <li><span>HTML,CSS</span></li>
+                            <li><span>JAVA</span></li>
+                            <li><span>AWS</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="educations">
+                        <ul>
+                            <li><span>2024</span><br>will complete Btech in computer Science</li>
+                            <li><span>2020</span><br>completed 12th</li>
+                            <li><span>2018</span><br>Completed 10th</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----------projects--------- -->
+    <div id="projects">
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="project-list">
+                <div>
+                    <h2> Location Tracking App</h2>
+                    <p>Me and my group members made a location tracking app "Route Finder" using Java in android studio
+                        . The main motive of this project is to track the Location of the college bus and show on the
+                        map.</p>
+                    <a href="">Learn more</a>
+                </div>
+                <div>
+                    <h2>Result Generation System</h2>
+                    <p>Me and my friends are worked on module of Student Management System that is Result Generation
+                        System.The main motive of this project is to generate Results of the students. </p>
+                    <a href="">Learn more</a>
+                </div>
+                <div>
+                    <h2> Ecommerce Website</h2>
+                    <p>I made a website using HTML and CSS . The main motive of this project is to know how the HTML and
+                        CSS works. I worked on frontend of the website.</p>
+                    <a href="">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----contact----- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p>shubhamdbabar@gmail.com</p>
+                    <p>1234567890</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter-square"></i></a>
+                        <a href="#"><i class="fab fa-instagram "></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+
+                    </div>
+                    <a href="Shubham's Resume.pdf" download class="btn btn2">Download CV</a>
+
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="text" email="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg">Thanks For Your Response !</span>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="copyright">
+            <p>Copyright C Shubham. Made with by Easy Tutorials </p>
+        </div>
+    </div>
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+
+        }
+    </script>
 </body>
+
 </html>
-<style>
-    body{
-        background-color:  rgb(213, 211, 211);
-    }
-    p{
-        text-align: center;
-        margin: 0px;
-        font-size: 20px;
-    }
-    h1{
-        text-align: center;
-        font-size: 50px;
-        padding: 0%;
-    }
-    .box{
-        margin-top: 20%;
-        
-    }
-</style>
