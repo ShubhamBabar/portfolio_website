@@ -1,4 +1,4 @@
-*{
+*{  
     margin: 0;
     padding: 0;
     font-family: 'Poppins',sans-serif;
@@ -48,8 +48,10 @@ nav{
     flex-wrap: wrap;
     
 } */
-.logo{
-    width: 140px;
+#logo{
+    width: 180px;
+    filter:drop-shadow(3px 6px  5px #ababab) ;
+    /* box-shadow: 3px 3px  3px blue; */
 }
 nav ul li{
     display: inline-block;
@@ -88,12 +90,16 @@ nav ul li a:hover::after{
 .header-text h1 span{
     color: #ff004f;
 }
+nav .fas {
+    display:none;
+}
 
 /* -----About---- */
 #about{
     padding: 80px 0;
     color: #ababab;
 }
+
 .row{
     display: flex;
     justify-content: space-between;
@@ -101,12 +107,18 @@ nav ul li a:hover::after{
 }
 .about-col-1{
     flex-basis: 35%;
+    overflow: hidden;
+    border-radius: 10px;
 }
 .about-col-1 img{
     width: 100%;
-   
     border-radius: 15px;
+    transition: transform 0.5s;
 }
+.about-col-1:hover img{
+    transform: scale(1.5);
+}
+
 .about-col-2{
     flex-basis:60%;
 }
@@ -272,8 +284,14 @@ form .btn2{
     font-weight: 300;
     margin-top: 20px;
 }
+
+
 /* =----------cssfor small screen----------- */
 @media only screen and (max-width:600px){
+    nav .fas{
+        display: block;
+        font-size: 25px;
+    }
     #header{
         background-image: url(icon.jpeg\ 1.jpg);
     }
@@ -304,13 +322,36 @@ form .btn2{
         flex-basis: 100%;
     } 
     .copyright{
+        width: 100%;
         font-size: 14px;
     }
+    nav ul{
+        background:#ff004f;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+        margin-left: 30px;
+    }
+    nav ul .fas{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+
 
 }
 #msg{
     color: #61b752;
-    margin-top: -10px;
-    
-    display: none;
+    margin-top: -40px;
+    display:block;
 }
